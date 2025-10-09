@@ -1,3 +1,119 @@
+/* Banner/Footer Styles (moved from app.html) */
+:root {
+	--banner-height: 72px;
+	--banner-bg-1: #4aa1a8;
+	--banner-bg-2: #2fa7af;
+	--banner-color: #ffffff;
+	--banner-max-width: 1400px;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	overscroll-behavior-y: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+#app-root {
+	position: relative;
+	min-height: 100vh;
+	box-sizing: border-box;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	padding-bottom: calc(var(--banner-height) + 20px);
+	flex: 1;
+}
+
+#company-bottom-banner {
+	position: relative;
+	width: 100%;
+	background: var(--banner-bg-2);
+	color: var(--banner-color);
+	font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px;
+	border-top: 4px solid var(--banner-bg-1);
+}
+
+#company-bottom-banner .logo {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+#company-bottom-banner .logo img {
+	height: 40px;
+	width: auto;
+	filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2)) brightness(0) invert(1);
+}
+
+#company-bottom-banner .title {
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	flex: 1;
+	color: var(--banner-color);
+}
+
+#company-bottom-banner .links {
+	display: flex;
+	gap: 16px;
+	font-size: 14px;
+}
+
+#company-bottom-banner .links a {
+	color: var(--banner-color);
+	text-decoration: none;
+}
+
+#company-bottom-banner .links a:hover {
+	text-decoration: underline;
+}
+
+footer {
+	position: sticky;
+	bottom: 0;
+	width: 100%;
+	color: var(--banner-color);
+	font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+	border-top: 2px solid white;
+}
+
+/* Theme overrides for banner */
+html.dark #company-bottom-banner,
+html.oled-dark #company-bottom-banner {
+	background: #171717;
+	border-top: 4px solid #222;
+	color: #fff;
+}
+html.her #company-bottom-banner {
+	background: #983724;
+	border-top: 4px solid #b94c2c;
+	color: #fff;
+}
+
+html.dark #company-bottom-banner .logo img,
+html.oled-dark #company-bottom-banner .logo img,
+html.her #company-bottom-banner .logo img {
+	filter: brightness(0) invert(1) drop-shadow(0 1px 1px rgba(0,0,0,0.2));
+}
+
+@media (max-width: 900px) {
+	#company-bottom-banner .title { font-size: 16px; }
+	#company-bottom-banner .logo img { height: 40px; }
+	#company-bottom-banner .inner { padding: 10px 12px; }
+}
+
+@media (max-width: 520px) {
+	#company-bottom-banner .inner { flex-wrap: wrap; gap: 8px; }
+	#company-bottom-banner .title { order: 2; width: 100%; text-align:left; }
+	#company-bottom-banner .links { order: 3; }
+	#company-bottom-banner .logo  { order: 1; }
+}
 @reference "./tailwind.css";
 
 @font-face {
