@@ -18,9 +18,7 @@ html, body {
 	position: relative;
 	min-height: 100vh;
 	box-sizing: border-box;
-	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
-	padding-bottom: calc(var(--banner-height) + 20px);
 	flex: 1;
 }
 
@@ -74,7 +72,7 @@ html, body {
 }
 
 footer {
-	position: sticky;
+	position: absolute;
 	bottom: 0;
 	width: 100%;
 	color: var(--banner-color);
