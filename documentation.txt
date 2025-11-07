@@ -2,4 +2,4 @@
 az acr login -n cubyacr  
 
 # build docker container
-docker buildx build --platform linux/amd64,linux/arm64 -t cubyacr.azurecr.io/cubygpt:0.6.27 --push .
+docker buildx build --platform linux/amd64,linux/arm64 -t cubyacr.azurecr.io/cubyai:0.6.34 --push .
